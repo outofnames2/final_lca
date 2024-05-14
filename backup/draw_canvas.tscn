@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7q2dexvlc4e8"]
+
+[ext_resource type="Shader" path="res://main.gdshader" id="1_hgm1p"]
+[ext_resource type="Script" path="res://backup/draw_canvas.gd" id="2_kon2a"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ydd7u"]
+shader = ExtResource("1_hgm1p")
+shader_parameter/test = 0.0
+shader_parameter/rules = PackedFloat32Array(0, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="ImageTexture" id="ImageTexture_rwvu0"]
+
+[node name="DrawCanvas" type="TextureRect"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_ydd7u")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+texture = SubResource("ImageTexture_rwvu0")
+expand_mode = 2
+stretch_mode = 4
+script = ExtResource("2_kon2a")

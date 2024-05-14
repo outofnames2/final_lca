@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://busovpm0i8wrd"]
+
+[ext_resource type="Script" path="res://scripts/user_input.gd" id="1_4fhie"]
+[ext_resource type="PackedScene" uid="uid://ovd30kxxs3wr" path="res://scenes/draw_viewport.tscn" id="2_mh28p"]
+[ext_resource type="PackedScene" uid="uid://ctb03v8ajb8m3" path="res://scenes/elemen_ca.tscn" id="3_vvyb4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eesuf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_udthv"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.5
+offset_top = -208.5
+offset_right = 192.5
+offset_bottom = 208.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eesuf")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_udthv")
+placeholder_text = "Escribe aqui."
+max_length = 8
+context_menu_enabled = false
+script = ExtResource("1_4fhie")
+
+[node name="DrawViewport" parent="VBoxContainer" node_paths=PackedStringArray("algorithm") instance=ExtResource("2_mh28p")]
+unique_name_in_owner = true
+layout_mode = 2
+algorithm = NodePath("CA")
+resolution = 0.23
+
+[node name="CA" parent="VBoxContainer/DrawViewport" instance=ExtResource("3_vvyb4")]
+
+[connection signal="text_submitted" from="VBoxContainer/LineEdit" to="VBoxContainer/LineEdit" method="_on_text_submitted"]

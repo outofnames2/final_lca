@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=3 uid="uid://cohv51wuy2nxp"]
+
+[ext_resource type="Script" path="res://backup/old_user_input.gd" id="1_lsjf0"]
+[ext_resource type="PackedScene" uid="uid://b7q2dexvlc4e8" path="res://backup/draw_canvas.tscn" id="2_t76td"]
+[ext_resource type="PackedScene" uid="uid://ctb03v8ajb8m3" path="res://scenes/elemen_ca.tscn" id="3_r2nlm"]
+
+[sub_resource type="GDScript" id="GDScript_6vay8"]
+script/source = "extends VBoxContainer
+"
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eesuf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_udthv"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.5
+offset_top = -208.5
+offset_right = 192.5
+offset_bottom = 208.5
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_6vay8")
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer" node_paths=PackedStringArray("text_receiver")]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_eesuf")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_udthv")
+placeholder_text = "Escribe aqui."
+max_length = 8
+context_menu_enabled = false
+script = ExtResource("1_lsjf0")
+text_receiver = NodePath("../SubViewportContainer/SubViewport/DrawCanvas/CA")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="VBoxContainer/SubViewportContainer"]
+disable_3d = true
+handle_input_locally = false
+size = Vector2i(320, 160)
+render_target_update_mode = 4
+
+[node name="DrawCanvas" parent="VBoxContainer/SubViewportContainer/SubViewport" instance=ExtResource("2_t76td")]
+unique_name_in_owner = true
+expand_mode = 0
+
+[node name="CA" parent="VBoxContainer/SubViewportContainer/SubViewport/DrawCanvas" node_paths=PackedStringArray("drawing") instance=ExtResource("3_r2nlm")]
+drawing = NodePath("..")
+
+[connection signal="text_submitted" from="VBoxContainer/LineEdit" to="VBoxContainer/LineEdit" method="_on_text_submitted"]
+[connection signal="mouse_entered" from="VBoxContainer/SubViewportContainer/SubViewport/DrawCanvas" to="VBoxContainer/SubViewportContainer/SubViewport/DrawCanvas" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/SubViewportContainer/SubViewport/DrawCanvas" to="VBoxContainer/SubViewportContainer/SubViewport/DrawCanvas" method="_on_mouse_exited"]
