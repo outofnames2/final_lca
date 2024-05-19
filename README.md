@@ -13,6 +13,7 @@ Un juguete digital utilizando automatas celulares. Habilitando la exploracion de
 - **click derecho**: pintas de negro
 - **input de texto**: definis una regla con una secuencia de ceros y unos de ocho caracteres, ej.: 00011110 (regla 30), y la aplicas a la imagen apretando *enter*.
 - **barra espaciadora**: reaplicas la regla (solo funciona con el mouse dentro de la imagen)
+
 Si no les aparece el recuadro para escribir, pongalo en pantalla completa (deberia aparecer el icono abajo a la derecha de la aplicacion).
 ## Materializacion de ideas varias (o prompts)
 - [ ] shaders?
