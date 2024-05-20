@@ -15,7 +15,10 @@ Un juguete digital utilizando automatas celulares. Habilitando la exploracion de
 - **barra espaciadora**: reaplicas la regla (solo funciona con el mouse dentro de la imagen)
 
 Si no les aparece el recuadro para escribir, pongalo en pantalla completa (deberia aparecer el icono abajo a la derecha de la aplicacion).
-## Materializacion de ideas varias (o prompts)
+## TODO
+- [ ] Investigar GraphEdit/GraphNode(Godot) y determinar si va o no
+- [ ] Si va: implementarlos
+### Materializacion de ideas varias (o prompts)
 - [ ] shaders?
 - [ ] ventanas y cables
 - [ ] combinaciones
