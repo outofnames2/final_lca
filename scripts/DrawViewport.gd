@@ -24,18 +24,15 @@ func _ready():
 	img.fill(Color.BLACK)
 	content.texture = ImageTexture.create_from_image(img)
 	
-func _input(_event: InputEvent) -> void:
+func _gui_input(event: InputEvent) -> void:
 	if not _mouse_is_in:
 		return
-		
-	var _pos = get_local_mouse_position()
-	#print(content.size, " ", _pos, " ")
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		@warning_ignore("narrowing_conversion")
-		img.set_pixelv(_pos * resolution, Color.WHITE)
+		img.set_pixelv(event.position * resolution, Color.WHITE)
 	elif Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
 		@warning_ignore("narrowing_conversion")
-		img.set_pixelv(_pos * resolution, Color.BLACK)
+		img.set_pixelv(event.position * resolution, Color.BLACK)
 	elif Input.is_action_just_released("ui_select") and rules != "":
 		algorithm.update_cells(self)
 		
@@ -46,3 +43,7 @@ func _on_mouse_entered():
 
 func _on_mouse_exited():
 	_mouse_is_in = false
+	
+
+func _on_resized():
+	_set_resolution(resolution)
