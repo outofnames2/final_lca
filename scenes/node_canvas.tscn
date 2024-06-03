@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://dejj7xaxohjca"]
+
+[ext_resource type="PackedScene" uid="uid://od06c7gs2oig" path="res://nodes/value_node.tscn" id="1_f1d3f"]
+[ext_resource type="Script" path="res://scripts/node_canvas.gd" id="1_i0gac"]
+[ext_resource type="PackedScene" uid="uid://dywtcpp75t62l" path="res://nodes/eca_node.tscn" id="3_vvr1p"]
+
+[node name="NodeCanvas" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i0gac")
+
+[node name="GraphEdit" type="GraphEdit" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+right_disconnects = true
+
+[node name="ValueNode" parent="GraphEdit" instance=ExtResource("1_f1d3f")]
+layout_mode = 0
+offset_left = 147.0
+offset_top = 201.0
+offset_right = 347.0
+offset_bottom = 301.0
+mouse_filter = 1
+position_offset = Vector2(147, 201)
+resizable = true
+
+[node name="ValueNode2" parent="GraphEdit" instance=ExtResource("1_f1d3f")]
+layout_mode = 0
+offset_left = 598.0
+offset_top = 221.0
+offset_right = 798.0
+offset_bottom = 321.0
+mouse_filter = 1
+position_offset = Vector2(598, 221)
+
+[node name="ECANode" parent="GraphEdit" instance=ExtResource("3_vvr1p")]
+layout_mode = 0
+offset_left = 771.0
+offset_top = 354.0
+offset_right = 907.0
+offset_bottom = 509.0
+mouse_filter = 1
+position_offset = Vector2(771, 354)
+resizable = true
+
+[connection signal="connection_request" from="GraphEdit" to="." method="_on_graph_edit_connection_request"]
+[connection signal="disconnection_request" from="GraphEdit" to="." method="_on_graph_edit_disconnection_request"]
