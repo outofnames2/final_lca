@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://od06c7gs2oig"]
+
+[ext_resource type="Script" path="res://nodes/value_node.gd" id="1_n6jst"]
+
+[node name="ValueNode" type="GraphNode"]
+custom_minimum_size = Vector2(200, 100)
+offset_right = 9.0
+offset_bottom = 55.0
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color(0.375018, 0.560589, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+script = ExtResource("1_n6jst")
+
+[node name="value" type="LineEdit" parent="."]
+layout_mode = 2
+
+[connection signal="text_changed" from="value" to="." method="_on_value_text_changed"]
