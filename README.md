@@ -5,9 +5,11 @@ Un juguete digital utilizando automatas celulares. Habilitando la exploracion de
 ## Tecnologias y Algoritmos (hasta ahora)
 - [Automatas Celulares Elementales](https://mathworld.wolfram.com/ElementaryCellularAutomaton.html): tiene dibujitos.
 - [Godot](https://godotengine.org): motor de videojuegos.
-- [Itch](https://itch.io): plataforma online para subir juegos/herramientas/recursos.
+- [Itch.io](https://itch.io): plataforma online para subir juegos/herramientas/recursos.
 ## Donde lo puedo probar?
 👁️🫱 por [aca](https://outofnames2.itch.io/ecas), *si funcionaa*. La contraseña es **laboritmico**.
+
+⚠️ version desactualizada.
 ### Como se controla esto?
 - **click izquierdo**: pintas de blanco
 - **click derecho**: pintas de negro
@@ -16,11 +18,11 @@ Un juguete digital utilizando automatas celulares. Habilitando la exploracion de
 
 Si no les aparece el recuadro para escribir, pongalo en pantalla completa (deberia aparecer el icono abajo a la derecha de la aplicacion).
 ## TODO
-- [ ] Investigar GraphEdit/GraphNode(Godot) y determinar si va o no
-- [ ] Si va: implementarlos
+- [x] Investigar GraphEdit/GraphNode(Godot) y determinar si va o no
+- [x] Si va: implementarlos
 ### Materializacion de ideas varias (o prompts)
 - [ ] shaders?
-- [ ] ventanas y cables
+- [x] ventanas y cables
 - [ ] combinaciones
 - [ ] ui/ux 👌👌
 - [ ] mayor control del recorrido
