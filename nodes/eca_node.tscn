@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dywtcpp75t62l"]
+
+[ext_resource type="Script" path="res://nodes/eca_node.gd" id="1_d14ak"]
+[ext_resource type="PackedScene" uid="uid://c0cem3828dkat" path="res://components/view_node_component.tscn" id="2_e30mw"]
+
+[node name="ECANode" type="GraphNode"]
+offset_right = 136.0
+offset_bottom = 155.0
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+script = ExtResource("1_d14ak")
+
+[node name="ViewNodeComponent" parent="." instance=ExtResource("2_e30mw")]
+layout_mode = 2
+resolution = Vector2i(481, 240)
+ratio = 0.1
