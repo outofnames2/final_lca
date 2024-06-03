@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://ctb03v8ajb8m3"]
-
-[ext_resource type="Script" path="res://scripts/ElemenCA.gd" id="1_rflgg"]
-
-[node name="ElemenCA" type="Node"]
-script = ExtResource("1_rflgg")
